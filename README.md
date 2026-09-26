@@ -103,8 +103,7 @@ More SQL examples (window functions like `lag()` and `rank()`) are in `queries/b
 │   └── macros/
 ├── queries/
 │   └── business_questions.sql  # example SQL analysis
-├── analysis.ipynb              # analysis of the gold layer
-├── images/                     # charts from the notebook
+├── analysis.ipynb              # analysis of the gold layer                
 ├── run_pipeline.py             # runs everything
 └── .github/workflows/          # GitHub Actions (CI)
 ```
