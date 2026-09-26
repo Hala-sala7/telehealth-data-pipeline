@@ -1,2 +1,6 @@
 duckdb>=1.1
 dbt-duckdb>=1.10
+pandas
+numpy
+matplotlib
+seaborn
