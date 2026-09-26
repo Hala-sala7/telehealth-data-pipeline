@@ -70,6 +70,22 @@ The notebook `analysis.ipynb` uses the gold layer to answer questions such as:
 
 > ⚠️ **Note:** because the data is synthetic, these numbers show how the pipeline works, not real business insights.
 
+**Appointments and revenue per month**
+
+<img width="1584" height="484" alt="download" src="https://github.com/user-attachments/assets/6b5d7e52-8145-40e3-ab9c-97c53f232925" />
+
+**No-show rate by provider**
+
+<img width="1062" height="479" alt="download (1)" src="https://github.com/user-attachments/assets/aae23088-75a9-4bed-bd40-0496d04d91dd" />
+
+**Average revenue per patient by age group**
+
+<img width="1015" height="479" alt="download (2)" src="https://github.com/user-attachments/assets/272bdec9-14ce-4b54-9087-aaca0993e9f1" />
+
+**Abnormal lab results by test**
+
+<img width="1106" height="479" alt="download (3)" src="https://github.com/user-attachments/assets/878babe9-39fe-466a-90d0-7b764011614f" />
+
 More SQL examples (window functions like `lag()` and `rank()`) are in `queries/business_questions.sql`.
 
 ## Project Structure
@@ -88,6 +104,7 @@ More SQL examples (window functions like `lag()` and `rank()`) are in `queries/b
 ├── queries/
 │   └── business_questions.sql  # example SQL analysis
 ├── analysis.ipynb              # analysis of the gold layer
+├── images/                     # charts from the notebook
 ├── run_pipeline.py             # runs everything
 └── .github/workflows/          # GitHub Actions (CI)
 ```
