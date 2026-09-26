@@ -1,0 +1,47 @@
+version: 2
+
+models:
+  - name: stg_patients
+    description: Cleaned, deduplicated patients.
+    columns:
+      - name: patient_id
+        data_tests: [unique, not_null]
+      - name: gender
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['male', 'female', 'unknown']
+      - name: date_of_birth
+        data_tests: [not_null]
+
+  - name: stg_appointments
+    description: Cleaned, deduplicated appointments for known patients.
+    columns:
+      - name: appointment_id
+        data_tests: [unique, not_null]
+      - name: patient_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_patients')
+                field: patient_id
+      - name: status
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['completed', 'cancelled', 'no_show']
+
+  - name: stg_lab_results
+    description: Numeric lab results with normal ranges and a low/normal/high flag.
+    columns:
+      - name: result_id
+        data_tests: [unique, not_null]
+      - name: result_value
+        data_tests: [not_null]
+      - name: result_flag
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['low', 'normal', 'high']

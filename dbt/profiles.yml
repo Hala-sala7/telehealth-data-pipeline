@@ -1,0 +1,8 @@
+telehealth_pipeline:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      # path is relative to the repository root (run commands from there)
+      path: data/warehouse.duckdb
+      threads: 4

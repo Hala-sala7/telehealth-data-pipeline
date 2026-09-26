@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: dim_patients
+    description: Analytics-ready patient dimension with demographics and activity metrics.
+    columns:
+      - name: patient_id
+        data_tests: [unique, not_null]
+      - name: age_group
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['18-29', '30-44', '45-59', '60+']
+
+  - name: agg_monthly_appointments
+    description: Monthly appointment KPIs (volume, no-show rate, revenue).
+    columns:
+      - name: month
+        data_tests: [unique, not_null]
+
+  - name: agg_lab_results_by_test
+    description: Monthly lab result trends per test, including abnormal result rate.

@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: bronze
+    description: Raw data loaded by scripts/load_bronze.py (all columns are text)
+    schema: bronze
+    tables:
+      - name: patients
+      - name: appointments
+      - name: lab_results
+      - name: lab_reference_ranges
